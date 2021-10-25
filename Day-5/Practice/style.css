@@ -1,0 +1,28 @@
+table,
+td,
+th {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 3px;
+}
+
+h2 {
+  background-color: rgb(186 210 234);
+  color: #3678b7;
+}
+
+.three-row {
+  text-align: center;
+}
+
+.blue-color {
+  color: #5588cb;
+}
+
+.gambar {
+  float: right;
+}
+
+.before-pic {
+  position: absolute;
+}

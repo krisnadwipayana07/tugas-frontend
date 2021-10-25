@@ -1,0 +1,41 @@
+* {
+  font-family: "slabo 27px";
+  font-size: 20px;
+}
+
+.one {
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100px;
+  height: 100px;
+  padding: 25px;
+  margin: 30px;
+}
+
+@media (max-width: 800px) {
+  .one {
+    display: flex;
+  }
+}
+
+.red {
+  background-color: red;
+  color: white;
+}
+
+.blue {
+  background-color: blue;
+  color: white;
+}
+
+.green {
+  width: 350px;
+  height: 350px;
+  /* padding: 5px; */
+  margin-left: 30px;
+  border-radius: 10px;
+  padding-left: 10px;
+  background-color: green;
+  color: white;
+}
