@@ -3,8 +3,24 @@
   color: #19345e;
 }
 
+body,
+html {
+  height: 100%;
+  margin: 0;
+}
+
 .gathering {
   display: flex;
+  flex-direction: row;
+}
+
+@media screen and (max-width: 1500px) {
+  .gathering {
+    flex-direction: column;
+  }
+  .bgImage {
+    height: fit-content;
+  }
 }
 
 .navColor {
@@ -17,7 +33,8 @@
 
 .bgImage {
   background-image: url(img/bg-img.png);
-  height: 650px;
+  height: 100%;
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }

@@ -1,0 +1,33 @@
+.font {
+  font-family: "Roboto", sans-serif;
+  color: #19345e;
+}
+
+.bgImage {
+  background-image: url("img/charles-rRWiVQzLm7k-unsplash.jpg");
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.full {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.gathering {
+  display: flex;
+  flex-direction: row;
+}
+
+.buttonSubmit {
+  background-color: #f47522;
+  border-radius: 100px;
+}
+
+.red {
+  color: red;
+}
