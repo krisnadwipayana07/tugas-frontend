@@ -13,7 +13,7 @@ function perkenalan() {
       a +
       " sekarang sedang mengikuti " +
       b +
-      "berasal dari " +
+      " berasal dari " +
       asal
   );
 }
@@ -37,7 +37,7 @@ console.log(perkenalan());
 // jawaban no 2
 // a. karena terdaftar masih bernilai false, belum terdapat perubahan dalam code yang membuat nilai terdaftar true
 // b. pada line 26 terdapat error dikarenakan nama merupakan nilai yang constant, jadi nilainya tetap, akan tetapi jika ingin membuat line 26 running kita harus mengubah type of variable dari nama menjadi let atau var
-// c. tidak, hal tersebut disebabkan karena pada line 28 terdapat variable asal yang dimana type of let variable, jadi hanya di assign pada local saja, dimana assign dilakukan di function perkenalan, jadi variable tersebut hanya bisa digunakan disana
+// c. tidak, hal tersebut disebabkan karena pada line 28 terdapat variable yang di assign pada function perkenalan, jadi variable tersebut hanya bisa digunakan disana, dan hal tersebut membuat code line no 29 menjadi tidak tereksekusi
 
 let c;
 const foo = ["Budi", "Sita", "Ayu"];
