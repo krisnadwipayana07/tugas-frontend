@@ -1,4 +1,3 @@
-const { matches } = require("lodash");
 var lodash = require("lodash");
 
 const anggota_kelas = ["budi", "sita", "ayu", "rena", "omen"];
@@ -17,6 +16,11 @@ let kelas = lodash.toString(anggota_kelas);
 kelas = kelas.replaceAll(",", "-");
 console.log(kelas);
 
+//e
+let reverse = lodash.reverse(anggota_kelas);
+console.log(reverse);
+
 //d
-let pulled = lodash.pull(anggota_kelas, 0);
+var pulled = anggota_kelas;
+lodash.pullAt(pulled, 0);
 console.log(pulled);
