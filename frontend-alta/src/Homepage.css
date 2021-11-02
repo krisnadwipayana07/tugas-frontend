@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap");
 * {
   font-family: "Roboto", sans-serif;
   color: #19345e;
@@ -18,33 +19,19 @@ html {
   .gathering {
     flex-direction: column;
   }
-  /* .bgImage {
-      height: max-content;
-    } */
 }
 
 .navColor {
   color: #19345e;
 }
 
-.gambarPic {
-  border-radius: 200px;
-}
-
 .bgImage {
   background-image: url("asset/img/bg-img.png");
-  height: 100%;
+  height: 50%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
-/* .bgImage {
-    background: url(img/bg-img.png) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-  } */
 
 .font700 {
   font-weight: 700;
@@ -62,8 +49,10 @@ html {
   color: #f47522;
 }
 
-.bgOrange {
+.btn-orange {
+  color: #fff;
   background-color: #f47522;
+  border-color: #f47522;
 }
 
 .border {
