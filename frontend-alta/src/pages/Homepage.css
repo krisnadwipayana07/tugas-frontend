@@ -13,6 +13,7 @@ html {
 .gathering {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 }
 
 @media screen and (max-width: 1500px) {
@@ -26,7 +27,7 @@ html {
 }
 
 .bgImage {
-  background-image: url("asset/img/bg-img.png");
+  background-image: url("../asset/img/bg-img.png");
   height: 50%;
   background-position: center;
   background-repeat: no-repeat;
