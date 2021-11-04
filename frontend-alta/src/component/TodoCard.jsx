@@ -1,7 +1,14 @@
 import React from "react";
 import "./TodoCard.css";
 
-export default function TodoCard({ id, title, completed, handleDelete }) {
+export default function TodoCard({
+  id,
+  title,
+  completed,
+  handleDelete,
+  handleCheck,
+  handleEdit,
+}) {
   return (
     <div className="m-3 border p-3">
       <input
@@ -10,16 +17,25 @@ export default function TodoCard({ id, title, completed, handleDelete }) {
         value=""
         id="flexCheckChecked"
         checked={completed}
-        onClick={!completed}
+        onClick={() => handleCheck(id)}
       />
       {completed ? <s>{title}</s> : <b>{title} </b>}
-      <button
-        className="btn float-end btn-danger"
-        style={{ borderRadius: "200px" }}
-        onClick={handleDelete(id)}
-      >
-        Delete
-      </button>
+      <div className="float-end">
+        <button
+          className="btn btn-warning mx-2"
+          style={{ borderRadius: "200px" }}
+          onClick={() => handleEdit(id, title, completed)}
+        >
+          Edit
+        </button>
+        <button
+          className="btn float-end btn-danger"
+          style={{ borderRadius: "200px" }}
+          onClick={() => handleDelete(id)}
+        >
+          Delete
+        </button>
+      </div>
     </div>
   );
 }
