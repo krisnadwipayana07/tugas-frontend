@@ -1,11 +1,24 @@
 import React from "react";
 import "./TodoCard.css";
 
-export default function TodoCard({ title, completed }) {
+export default function TodoCard({ id, title, completed, handleDelete }) {
   return (
-    <div className="m-3">
-      <button type="submit" class="border p-2 px-4" onclick="getData()">
-        {completed ? <b>{title}</b> : <s>{title} </s>}
+    <div className="m-3 border p-3">
+      <input
+        class="form-check-input mx-2"
+        type="checkbox"
+        value=""
+        id="flexCheckChecked"
+        checked={completed}
+        onClick={!completed}
+      />
+      {completed ? <s>{title}</s> : <b>{title} </b>}
+      <button
+        className="btn float-end btn-danger"
+        style={{ borderRadius: "200px" }}
+        onClick={handleDelete(id)}
+      >
+        Delete
       </button>
     </div>
   );
