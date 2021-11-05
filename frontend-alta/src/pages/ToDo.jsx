@@ -52,18 +52,31 @@ class Todo extends Component {
 
   changeValue = (e) => {
     this.setState({
-      newTask: { ...this.state.data, [e.target.name]: e.target.value },
+      newTask: { ...this.state.newTask, [e.target.name]: e.target.value },
+    });
+  };
+
+  handleNewValue = () => {
+    this.setState({
+      newTask: {
+        id: 0,
+        title: "",
+        completed: false,
+      },
     });
   };
 
   handleSubmit = (e) => {
     e.preventDefault();
-    let { id } = this.state.newTask;
-    let data = this.state.data.find((item) => item.id === id);
+    console.log(this.state.data);
+    let data = this.state.data.find(
+      (item) => item.id === this.state.newTask.id
+    );
+    console.log(this.state.newTask);
     console.log(data);
-    if (data || data === undefined) {
+    if (data) {
       let prevData = this.state.data.map((item) =>
-        item.id === id ? this.state.newTask : item
+        item.id === this.state.newTask.id ? this.state.newTask : item
       );
       console.log(prevData);
       this.setState({
@@ -76,20 +89,19 @@ class Todo extends Component {
         ...this.state.newTask,
         id: this.state.data[lastId - 1].id + 1,
       };
+      console.log(newData);
       this.setState({
         data: [...this.state.data, newData],
       });
+      console.log(this.state.data);
       console.log("kesini diaa");
     }
   };
 
-  handleEdit = (id, title, completed) => {
+  handleEdit = (id) => {
+    let prevData = this.state.data.find((item) => item.id === id);
     this.setState({
-      newTask: {
-        id: id,
-        title: title,
-        completed: completed,
-      },
+      newTask: prevData,
     });
   };
   render() {
@@ -103,6 +115,16 @@ class Todo extends Component {
         >
           To Do App
         </h2>
+        <div className="m-3 p-3">
+          <button
+            class="btn btn-success float-end px-4"
+            value="0"
+            name="id"
+            onClick={() => this.handleNewValue()}
+          >
+            +
+          </button>
+        </div>
         <form onSubmit={this.handleSubmit}>
           <div class="input-group m-4 px-5" style={{ width: "100%" }}>
             <input

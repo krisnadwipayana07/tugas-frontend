@@ -15,6 +15,8 @@ export default function Tables() {
   const changeValue = (e) => {
     setDataBaru({ ...dataBaru, [e.target.name]: e.target.value });
   };
+
+  const handleSubmit = (e) => {};
   return (
     <>
       <Navbar2 title="Stasiun Gubeng" />
