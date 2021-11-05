@@ -5,7 +5,7 @@ import { todoData } from "./ToDoData";
 export default function ToDoUseState() {
   const [data, setData] = useState(todoData);
   const [dataBaru, setDataBaru] = useState({
-    id: 0,
+    id: null,
     title: "",
     completed: false,
   });
@@ -27,10 +27,8 @@ export default function ToDoUseState() {
   };
 
   const handleNewValue = () => {
-    let last = data.length;
-    let lastId = data[last - 1].id + 1;
     setDataBaru({
-      id: lastId,
+      id: null,
       title: "",
       completed: false,
     });
@@ -48,11 +46,12 @@ export default function ToDoUseState() {
       );
       setData(newData);
     } else {
-      //   let last = data.length;
-      //   let lastId = data[last - 1].id;
-      //   setDataBaru({ ...dataBaru, id: lastId });
-      //   console.log(dataBaru);
-      setData(...data, dataBaru);
+      let last = data.length;
+      console.log(last);
+      let lastId = data[last - 1].id + 1;
+      setDataBaru({ ...dataBaru, id: lastId });
+      console.log(dataBaru);
+      setData([...data, dataBaru]);
       console.log(data);
       console.log("kesini diaa");
     }
