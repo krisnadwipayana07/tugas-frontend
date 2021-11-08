@@ -1,3 +1,5 @@
+import AboutApp from "./pages/AboutApp";
+import AbouteAuthor from "./pages/AbouteAuthor";
 import ContactUs from "./pages/contact-us/ContactUs";
 import Homepage from "./pages/homepage/Homepage";
 import Tables from "./pages/Table";
@@ -6,8 +8,18 @@ import ToDoUseState from "./pages/ToDoUseState";
 
 const routesPage = [
   {
-    name: "homepage",
+    name: "Home",
     address: "/",
+    component: ToDo,
+  },
+  {
+    name: "Todo Function",
+    address: "/todofunction",
+    component: ToDoUseState,
+  },
+  {
+    name: "homepage",
+    address: "/homepage",
     component: Homepage,
   },
   {
@@ -21,14 +33,14 @@ const routesPage = [
     component: Tables,
   },
   {
-    name: "todo",
-    address: "/todo",
-    component: ToDo,
+    name: "About The App",
+    address: "/about/about-app",
+    component: AboutApp,
   },
   {
-    name: "todo",
-    address: "/todofunction",
-    component: ToDoUseState,
+    name: "About The Authors",
+    address: "/about/about-author",
+    component: AbouteAuthor,
   },
 ];
 export default routesPage;
