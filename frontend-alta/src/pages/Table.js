@@ -12,7 +12,6 @@ export default function Tables() {
     umur: "",
   });
   const [tambahOn, setTambahOn] = useState(false);
-  const [editOn, setEditOn] = useState(false);
 
   const handleDelete = (id) => {
     let newData = data.filter((item) => item.id !== id);

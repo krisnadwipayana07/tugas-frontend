@@ -1,6 +1,7 @@
 import AboutApp from "./pages/AboutApp";
 import AbouteAuthor from "./pages/AbouteAuthor";
 import ContactUs from "./pages/contact-us/ContactUs";
+import Form from "./pages/form/Form";
 import Homepage from "./pages/homepage/Homepage";
 import Tables from "./pages/Table";
 import ToDo from "./pages/ToDo";
@@ -9,7 +10,7 @@ import ToDoUseState from "./pages/ToDoUseState";
 const routesPage = [
   {
     name: "Home",
-    address: "/",
+    address: "/todo",
     component: ToDo,
   },
   {
@@ -41,6 +42,11 @@ const routesPage = [
     name: "About The Authors",
     address: "/about/about-author",
     component: AbouteAuthor,
+  },
+  {
+    name: "Form",
+    address: "/",
+    component: Form,
   },
 ];
 export default routesPage;
