@@ -11,28 +11,28 @@ const routesPage = [
   {
     name: "Home",
     address: "/",
-    component: ToDo,
-  },
-  {
-    name: "Todo Function",
-    address: "/todofunction",
     component: ToDoUseState,
   },
   {
-    name: "homepage",
-    address: "/homepage",
-    component: Homepage,
+    name: "Todo Class",
+    address: "/todoClass",
+    component: ToDo,
   },
-  {
-    name: "contact us",
-    address: "/contactus",
-    component: ContactUs,
-  },
-  {
-    name: "table",
-    address: "/table",
-    component: Tables,
-  },
+  // {
+  //   name: "homepage",
+  //   address: "/homepage",
+  //   component: Homepage,
+  // },
+  // {
+  //   name: "contact us",
+  //   address: "/contactus",
+  //   component: ContactUs,
+  // },
+  // {
+  //   name: "table",
+  //   address: "/table",
+  //   component: Tables,
+  // },
   {
     name: "About The App",
     address: "/about/about-app",

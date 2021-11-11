@@ -126,7 +126,7 @@ class Todo extends Component {
           </button>
         </div>
         <form onSubmit={this.handleSubmit}>
-          <div class="input-group m-4 px-5" style={{ width: "100%" }}>
+          <div class="d-flex m-4 px-5" style={{ width: "100%" }}>
             <input
               type="text"
               class="form-control"

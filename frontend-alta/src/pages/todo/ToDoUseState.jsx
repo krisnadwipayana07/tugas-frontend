@@ -62,7 +62,7 @@ export default function ToDoUseState(props) {
         </button>
       </div>
       <form onSubmit={handleSubmit}>
-        <div class="input-group m-4 px-5" style={{ width: "100%" }}>
+        <div class="m-4 px-5 d-flex">
           <input
             type="text"
             class="form-control"
