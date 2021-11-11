@@ -14,8 +14,6 @@ export default function TodoCard({
       <input
         class="form-check-input mx-2"
         type="checkbox"
-        value=""
-        id="flexCheckChecked"
         checked={completed}
         onClick={() => handleCheck(id)}
       />

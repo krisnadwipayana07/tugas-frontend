@@ -1,11 +1,11 @@
-import AboutApp from "./pages/AboutApp";
-import AbouteAuthor from "./pages/AbouteAuthor";
+import AboutApp from "./pages/about/app/AboutApp";
+import AbouteAuthor from "./pages/about/author/AbouteAuthor";
 import ContactUs from "./pages/contact-us/ContactUs";
 import Form from "./pages/form/Form";
 import Homepage from "./pages/homepage/Homepage";
-import Tables from "./pages/Table";
-import ToDo from "./pages/ToDo";
-import ToDoUseState from "./pages/ToDoUseState";
+import Tables from "./pages/table/Table";
+import ToDo from "./pages/todo/ToDo";
+import ToDoUseState from "./pages/todo/ToDoUseState";
 
 const routesPage = [
   {
