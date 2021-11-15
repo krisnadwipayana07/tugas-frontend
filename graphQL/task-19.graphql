@@ -1,0 +1,51 @@
+mutation MyMutation {
+  insert_keterangan(
+    objects: {
+      id: 1
+      id_anggota: 3
+      nilai: 90
+      pelajaran: "Sistem Informasi"
+      status: true
+    }
+  ) {
+    returning {
+      id
+      id_anggota
+      nilai
+      pelajaran
+      status
+    }
+  }
+}
+
+mutation MyMutation {
+  insert_keterangan(
+    objects: {
+      id: 2
+      id_anggota: 3
+      nilai: 55
+      pelajaran: "React"
+      status: false
+    }
+  ) {
+    returning {
+      id
+      id_anggota
+      nilai
+      pelajaran
+      status
+    }
+  }
+}
+
+mutation MyMutation {
+  update_keterangan(where: { status: { _eq: false } }, _set: { status: true }) {
+    returning {
+      id
+      id_anggota
+      nilai
+      pelajaran
+      status
+    }
+  }
+}

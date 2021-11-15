@@ -1,14 +1,14 @@
 @media screen and (max-width: 1500px) {
-  .gathering {
-    flex-direction: column;
+  .background {
+    width: 100vw;
+    margin-top: auto;
   }
 }
 
 .background {
   background: linear-gradient(rgba(25, 52, 94, 0.65), rgba(25, 52, 94, 0.65)),
     url("../../asset/img/charles-rRWiVQzLm7k-unsplash.jpg");
-  height: auto;
-  background-size: 100%;
+  width: 30vw;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -20,20 +20,6 @@
   margin-right: auto;
   margin-top: 50%;
   background-size: 100vh;
-}
-
-#bgColor {
-  background-color: rgba(25, 52, 94, 0.65);
-}
-
-/* .full {
-    max-width: 100%;
-    max-height: 100%;
-  } */
-
-.gathering {
-  display: flex;
-  flex-direction: row;
 }
 
 .btn-orange {

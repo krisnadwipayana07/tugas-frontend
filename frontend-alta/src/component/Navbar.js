@@ -1,12 +1,13 @@
-import React from "react";
-import "./Navbar.css";
+import React, { useEffect } from "react";
 
 const orange = {
   color: "#f47522",
 };
 
-export default function Navbar() {
-  const emptyURL = "";
+export default function Navbar({ page }) {
+  useEffect(() => {
+    document.getElementById(page).style.color = "#f47522";
+  }, [page]);
   return (
     <div>
       <nav
@@ -16,13 +17,16 @@ export default function Navbar() {
         navbar-expand-lg navbar-light
         bg-white
         px-5
-        navbar-nav-scroll
         overflow-auto
       "
       >
         <div className="container-fluid">
-          <a href="file2.html">
-            <img src="asset/img/logo-ALTA@2x.png" alt="logo" className="logo" />
+          <a href="/">
+            <img
+              src="asset/img/logo-ALTA@2x.png"
+              alt="logo"
+              style={{ width: "100px", marginRight: "5px" }}
+            />
           </a>
           <button
             className="navbar-toggler"
@@ -41,29 +45,25 @@ export default function Navbar() {
           >
             <ul className="navbar-nav mb-2 mb-lg-0">
               <li className="mx-3">
-                <a
-                  className="nav-link active font700 color-orange"
-                  style={orange}
-                  href={emptyURL}
-                >
+                <a className="nav-link active font700" id="home" href="/">
                   HOME
                 </a>
               </li>
               <li
                 className="nav-item mx-2 font400"
-                //   style="color: #19345e"
+                style={{ color: "#19345e" }}
               >
-                <a className="nav-link" href={emptyURL}>
+                <a className="nav-link" href="/" id="about">
                   ABOUT
                 </a>
               </li>
               <li className="nav-item mx-2 font400">
-                <a className="nav-link" href={emptyURL}>
-                  EXPERIENCE
+                <a className="nav-link" href="/news" id="news">
+                  NEWS
                 </a>
               </li>
               <li className="nav-item mx-2 font400">
-                <a className="nav-link" href="/contactus">
+                <a className="nav-link" href="/contactus" id="contactus">
                   CONTACT
                 </a>
               </li>

@@ -8,6 +8,7 @@ import NotFound from "./pages/NotFound";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 import { store, persistor } from "./store/store";
+import ReviewMessage from "./pages/reviewMessage/ReviewMessage";
 
 function App() {
   return (
@@ -15,12 +16,13 @@ function App() {
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
           <Router>
-            <Sidebar />
+            {/* <Sidebar /> */}
             <Suspense>
               <Switch>
                 {routesPage.map(({ address, component }, key) => (
                   <Route key={key} exact path={address} component={component} />
                 ))}
+                <Route exact path="/reviewMessage" component={ReviewMessage} />
                 <Route component={NotFound} />
               </Switch>
             </Suspense>
