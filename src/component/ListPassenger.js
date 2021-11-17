@@ -73,7 +73,7 @@ const ListPassenger = (props) => {
           <td>Nama</td>
           <td>Umur</td>
           <td>Jenis Kelamin</td>
-          <td bgcolor="white" className="removeBorder"></td>
+          <td>Action</td>
         </thead>
         {list?.map((item) => (
           <ListItem
