@@ -1,8 +1,16 @@
 import { useState } from "react/cjs/react.development";
 import ListItem from "./ListItem";
 
-const ListPassenger = ({ list, loading, error, onGetAll, onGetData }) => {
-  const [idFind, setIdFind] = useState(0);
+const ListPassenger = ({
+  list,
+  loading,
+  error,
+  onGetData,
+  onGetAll,
+  updatePassenger,
+  onDelete,
+}) => {
+  const [idFind, setIdFind] = useState();
   return (
     <div>
       <form>
@@ -19,7 +27,7 @@ const ListPassenger = ({ list, loading, error, onGetAll, onGetData }) => {
             class="btn btn-outline-secondary"
             type="button"
             id="button-addon2"
-            onClick={idFind === "" ? onGetAll() : onGetData(idFind)}
+            onClick={() => (idFind === "" ? onGetAll() : onGetData(idFind))}
           >
             Search
           </button>
@@ -28,14 +36,19 @@ const ListPassenger = ({ list, loading, error, onGetAll, onGetData }) => {
       {loading && <p>loading...</p>}
       {error && <p>error!</p>}
       <table cellPadding="5px" cellSpacing="0" style={{ margin: "auto" }}>
-        <th bgcolor="red">
+        <thead bgcolor="red">
           <td>Nama</td>
           <td>Umur</td>
           <td>Jenis Kelamin</td>
-          <td>Action</td>
-        </th>
-        {list?.map((item) => (
-          <ListItem key={item.id} data={item} />
+          <td></td>
+        </thead>
+        {list?.pengunjung?.map((item) => (
+          <ListItem
+            key={item.id}
+            data={item}
+            updatePassenger={updatePassenger}
+            onDelete={onDelete}
+          />
         ))}
       </table>
     </div>
