@@ -1,49 +1,8 @@
+import { useState } from "react/cjs/react.development";
 import ListItem from "./ListItem";
-import { gql, useQuery, useLazyQuery } from "@apollo/client";
-import { useEffect, useState } from "react";
 
-const getPassengers = gql`
-  query MyQuery($id: Int!) {
-    pengunjung(where: { id: { _eq: $id } }) {
-      id
-      jenis_kelamin
-      nama
-      umur
-    }
-  }
-`;
-const getAllPassengers = gql`
-  query MyQuery {
-    pengunjung {
-      id
-      jenis_kelamin
-      nama
-      umur
-    }
-  }
-`;
-
-const ListPassenger = (props) => {
-  const [getPassenger, { data, loading, error }] = useLazyQuery(getPassengers);
-  const [
-    getAllPassenger,
-    { data: dataAll, loading: loadingAll, error: errorAll },
-  ] = useLazyQuery(getAllPassengers);
-  const [idFind, setIdFind] = useState();
-  const [list, setList] = useState([]);
-  const onGetAll = () => {
-    getAllPassenger();
-    setList(dataAll?.pengunjung);
-  };
-  const onGetData = () => {
-    getPassenger({
-      variables: {
-        id: idFind,
-      },
-    });
-    setList(data?.pengunjung);
-  };
-
+const ListPassenger = ({ list, loading, error, onGetAll, onGetData }) => {
+  const [idFind, setIdFind] = useState(0);
   return (
     <div>
       <form>
@@ -60,27 +19,23 @@ const ListPassenger = (props) => {
             class="btn btn-outline-secondary"
             type="button"
             id="button-addon2"
-            onClick={idFind === "" ? onGetAll : onGetData}
+            onClick={idFind === "" ? onGetAll() : onGetData(idFind)}
           >
             Search
           </button>
         </div>
       </form>
-      {(loading || loadingAll) && <p>loading...</p>}
-      {(error || errorAll) && <p>error!</p>}
+      {loading && <p>loading...</p>}
+      {error && <p>error!</p>}
       <table cellPadding="5px" cellSpacing="0" style={{ margin: "auto" }}>
-        <thead bgcolor="red">
+        <th bgcolor="red">
           <td>Nama</td>
           <td>Umur</td>
           <td>Jenis Kelamin</td>
           <td>Action</td>
-        </thead>
+        </th>
         {list?.map((item) => (
-          <ListItem
-            key={item.id}
-            data={item}
-            hapusPengunjung={props.hapusPengunjung}
-          />
+          <ListItem key={item.id} data={item} />
         ))}
       </table>
     </div>

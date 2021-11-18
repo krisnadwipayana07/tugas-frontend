@@ -1,39 +1,68 @@
-import { Component } from "react";
-import { v4 as uuidv4 } from "uuid";
 import PassengerInput from "./PassengerInput";
 import ListPassenger from "./ListPassenger";
 import Header from "./Header";
+import { gql, useLazyQuery, useQuery } from "@apollo/client";
+import { useState } from "react";
+import { useEffect } from "react/cjs/react.development";
 
-class Home extends Component {
-  hapusPengunjung = (id) => {
-    this.setState({
-      data: [
-        ...this.state.data.filter((item) => {
-          return item.id !== id;
-        }),
-      ],
-    });
-  };
-
-  tambahPengunjung = (newUser) => {
-    const newData = {
-      id: uuidv4(),
-      ...newUser,
-    };
-    this.setState({
-      data: [...this.state.data, newData],
-    });
-  };
-
-  render() {
-    return (
-      <div>
-        <Header />
-        <ListPassenger hapusPengunjung={this.hapusPengunjung} />
-        <PassengerInput tambahPengunjung={this.tambahPengunjung} />
-      </div>
-    );
+const getPassengers = gql`
+  query MyQuery($id: Int!) {
+    pengunjung(where: { id: { _eq: $id } }) {
+      id
+      jenis_kelamin
+      nama
+      umur
+    }
   }
-}
+`;
+const getAllPassengers = gql`
+  query MyQuery {
+    pengunjung {
+      id
+      jenis_kelamin
+      nama
+      umur
+    }
+  }
+`;
 
-export default Home;
+export default function Home() {
+  const [getPassenger, { data, loading, errorOnce }] =
+    useLazyQuery(getPassengers);
+  const {
+    data: dataAll,
+    loading: loadingAll,
+    error: errorAll,
+  } = useQuery(getAllPassengers);
+  const [list, setList] = useState([]);
+
+  const onGetAll = () => {
+    setList(dataAll?.pengunjung);
+  };
+  const onGetData = (id) => {
+    getPassenger({
+      variables: {
+        id: id,
+      },
+    });
+    setList(data?.pengunjung);
+  };
+
+  useEffect(() => {
+    console.log(dataAll);
+  }, [dataAll]);
+
+  return (
+    <div>
+      <Header />
+      <ListPassenger
+        list={dataAll}
+        // loading={loading || loadingAll}
+        // error={errorAll || errorOnce}
+        onGetAll={onGetAll}
+        onGetData={onGetData}
+      />
+      <PassengerInput />
+    </div>
+  );
+}
