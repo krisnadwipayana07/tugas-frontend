@@ -3,20 +3,34 @@
   color: #19345e;
 }
 
-.bgImage {
-  background-image: url("img/charles-rRWiVQzLm7k-unsplash.jpg");
-  height: 100vh;
-
-  /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+@media screen and (max-width: 1500px) {
+  .gathering {
+    flex-direction: column;
+  }
 }
 
-.full {
+.bgImage {
+  background: url("img/charles-rRWiVQzLm7k-unsplash.jpg");
+  height: auto;
+  background-size: 100%;
+}
+
+#logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50%;
+  background-size: 100vh;
+}
+
+#bgColor {
+  background-color: rgba(25, 52, 94, 0.65);
+}
+
+/* .full {
   max-width: 100%;
   max-height: 100%;
-}
+} */
 
 .gathering {
   display: flex;

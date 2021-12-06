@@ -18,9 +18,9 @@ html {
   .gathering {
     flex-direction: column;
   }
-  .bgImage {
+  /* .bgImage {
     height: max-content;
-  }
+  } */
 }
 
 .navColor {

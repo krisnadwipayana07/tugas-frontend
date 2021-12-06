@@ -25,18 +25,12 @@ console.log(cleanData);
 
 //soal 4
 let konfersiMenit = (detik) => {
-  let hasil;
   menit = Math.floor(detik / 60);
   detik = detik % 60;
   if (detik < 10) {
     detik = "0" + detik;
   }
-  if (menit > 0) {
-    hasil = menit + ":" + detik;
-  } else {
-    hasil = "0:" + detik;
-  }
-  return hasil;
+  return menit + ":" + detik;
 };
 console.log(konfersiMenit(88));
 console.log(konfersiMenit(53));
@@ -48,7 +42,7 @@ function harusGenap(angka) {
   if (angka % 2 == 0) {
     return "expected result in console: Valid";
   }
-  return "expected result in console: Invalid";
+  return new Error("expected result in console: Invalid");
 }
 
 try {
@@ -67,13 +61,12 @@ try {
 function perkalianUnik(arr) {
   let hasil = [];
   for (i = 0; i < arr.length; i++) {
-    let nilai = 1;
+    hasil[i] = 1;
     arr.map((value, index) => {
       if (index != i) {
-        nilai = nilai * value;
+        hasil[i] = hasil[i] * value;
       }
     });
-    hasil.push(nilai);
   }
   return hasil;
 }
