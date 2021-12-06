@@ -19,7 +19,7 @@ html {
     flex-direction: column;
   }
   .bgImage {
-    height: fit-content;
+    height: max-content;
   }
 }
 
