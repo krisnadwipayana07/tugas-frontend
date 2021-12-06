@@ -1,0 +1,67 @@
+* {
+  font-family: "Roboto", sans-serif;
+  color: #19345e;
+}
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+}
+
+.gathering {
+  display: flex;
+  flex-direction: row;
+}
+
+@media screen and (max-width: 1500px) {
+  .gathering {
+    flex-direction: column;
+  }
+  .bgImage {
+    height: fit-content;
+  }
+}
+
+.navColor {
+  color: #19345e;
+}
+
+.gambarPic {
+  border-radius: 200px;
+}
+
+.bgImage {
+  background-image: url(img/bg-img.png);
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+/* .bgImage {
+  background: url(img/bg-img.png) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+} */
+
+.font700 {
+  font-weight: 700;
+}
+
+.font500 {
+  font-weight: 500;
+}
+
+.font400 {
+  font-weight: 400;
+}
+
+.color-orange {
+  color: #f47522;
+}
+
+.bg-orange {
+  background-color: #f47522;
+}
