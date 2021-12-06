@@ -10,7 +10,7 @@ import ToDoUseState from "./pages/ToDoUseState";
 const routesPage = [
   {
     name: "Home",
-    address: "/todo",
+    address: "/",
     component: ToDo,
   },
   {
@@ -45,7 +45,7 @@ const routesPage = [
   },
   {
     name: "Form",
-    address: "/",
+    address: "/form",
     component: Form,
   },
 ];
