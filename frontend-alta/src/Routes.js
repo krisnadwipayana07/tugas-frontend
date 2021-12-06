@@ -1,5 +1,5 @@
-import ContactUs from "./pages/ContactUs";
-import Homepage from "./pages/Homepage";
+import ContactUs from "./pages/contact-us/ContactUs";
+import Homepage from "./pages/homepage/Homepage";
 import Tables from "./pages/Table";
 import ToDo from "./pages/ToDo";
 
